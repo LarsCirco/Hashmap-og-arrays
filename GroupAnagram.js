@@ -1,3 +1,23 @@
-/*Given an array of strings strs, group the anagrams together. You can return the answer in any order.
+var strs = ["eat","tea","tan","ate","nat","bat"]
+groupanagram(strs);
 
-An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.*/
+function groupanagram(strs) {
+    let hashmap ={};
+    
+    for (let str of strs)
+    {
+    let sorted = str.split("").sort().join("");
+    if(!hashmap[sorted]){
+        hashmap[sorted]=[]
+    };
+    hashmap[sorted].push(str);
+}
+    for (key in hashmap)
+    {
+        console.log(hashmap)
+        console.log(hashmap[key])
+        
+    }
+    return hashmap[key];
+}
+https://leetcode.com/problems/group-anagrams/submissions/1021946057/
